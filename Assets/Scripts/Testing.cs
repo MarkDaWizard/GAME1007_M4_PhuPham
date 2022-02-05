@@ -37,7 +37,6 @@ public class Testing : MonoBehaviour {
             if(Input.anyKeyDown)
             {
                 isPlaying = true;
-                gamePad.SetActive(false);
             }
         }
 
@@ -92,17 +91,23 @@ public class Testing : MonoBehaviour {
 
     public void OnExitButtonClick()
     {
-        Application.Quit();
+        isPlaying = false;
     }
 
     private void UpdateUI()
     {
         if (!isPlaying)
+        {
+            gamePad.SetActive(true);
             return;
+        }
         else
+        {
             howToText.text = "";
+            gamePad.SetActive(false);
+        }
 
-        if(isScanningMode)
+        if (isScanningMode)
         {
             modeText.text = "Scan Mode";
         }
