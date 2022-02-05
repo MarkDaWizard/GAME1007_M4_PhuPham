@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 
 
-public class Testing : MonoBehaviour {
+public class MainGameplay : MonoBehaviour {
 
     [SerializeField] private HeatMapGenericVisual heatMapGenericVisual;
     private GridScript<HeatMapGridObject> grid;
